@@ -878,6 +878,106 @@
     letter-spacing: 0;
   }
 
+  /* ── SALON ── */
+  .salon-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-bottom: 3.5rem;
+  }
+
+  .salon-book-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.2rem;
+    padding-top: 1rem;
+  }
+
+  .salon-phone-display {
+    text-align: right;
+  }
+
+  .salon-phone-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .salon-phone-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+
+  .salon-phone-num:hover { color: var(--gold-light); }
+
+  .salon-book-btn { white-space: nowrap; }
+
+  .salon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(184,146,58,0.08);
+    margin-bottom: 3rem;
+  }
+
+  .salon-card {
+    background: var(--deep);
+    padding: 2.5rem 2rem;
+    transition: background 0.4s;
+    position: relative;
+  }
+
+  .salon-card:hover { background: #0f0b12; }
+
+  .salon-card-icon {
+    font-size: 1.5rem;
+    color: var(--crimson-bright);
+    margin-bottom: 1rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .salon-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+
+  .salon-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(240,230,216,0.55);
+  }
+
+  .salon-book-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(184,146,58,0.18);
+    padding: 1.5rem 2rem;
+    background: var(--deep);
+  }
+
+  .salon-book-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--cream);
+  }
+
   /* ── HAMBURGER BUTTON ── */
   .nav-hamburger {
     display: none;
@@ -980,6 +1080,13 @@
     .services-section { padding: 4rem 1.5rem; }
     .services-grid { grid-template-columns: 1fr 1fr; }
 
+    /* Salon */
+    .salon-header { grid-template-columns: 1fr; gap: 2rem; }
+    .salon-book-cta { align-items: flex-start; }
+    .salon-phone-display { text-align: left; }
+    .salon-grid { grid-template-columns: 1fr 1fr; }
+    .salon-book-bar { flex-direction: column; gap: 1.2rem; text-align: center; }
+
     /* Events */
     .events-section { padding: 0; }
     .events-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
@@ -1017,6 +1124,10 @@
     /* Services */
     .services-grid { grid-template-columns: 1fr; gap: 1px; }
 
+    /* Salon */
+    .salon-grid { grid-template-columns: 1fr; }
+    .salon-phone-num { font-size: 1.5rem; }
+
     /* Shop */
     section[style*="padding: 6rem 3rem"] { padding: 4rem 1.2rem !important; }
 
@@ -1046,6 +1157,7 @@
     <li><a href="#">Home</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Services</a></li>
+    <li><a href="#">Salon</a></li>
     <li><a href="#">Shop</a></li>
     <li><a href="#">Events</a></li>
   </ul>
@@ -1061,6 +1173,8 @@
   <a href="#" onclick="closeMenu()">About</a>
   <div class="mobile-menu-divider"></div>
   <a href="#" onclick="closeMenu()">Services</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" onclick="closeMenu()">Salon</a>
   <div class="mobile-menu-divider"></div>
   <a href="#" onclick="closeMenu()">Shop</a>
   <div class="mobile-menu-divider"></div>
@@ -1185,6 +1299,62 @@
         <p>Come browse in person. The vibe, the smell, the atmosphere — it's half the experience.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SALON -->
+<section id="salon" style="background: var(--black); border-top: 1px solid rgba(184,146,58,0.1); padding: 6rem 3rem;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="salon-header">
+      <div>
+        <span class="section-label">In-House</span>
+        <h2 class="section-title">The <em>Salon</em></h2>
+        <div class="gold-rule"></div>
+        <p style="font-size:1.1rem; line-height:1.8; color:rgba(240,230,216,0.7); max-width:520px;">
+          Dark. Editorial. You. Our in-house salon brings alternative-friendly hair artistry right inside the boutique — no stuffy salon vibes, just good music, good energy, and great hair.
+        </p>
+      </div>
+      <div class="salon-book-cta">
+        <div class="salon-phone-display">
+          <span class="salon-phone-label">Book via Text</span>
+          <a href="sms:7021111111" class="salon-phone-num">702-111-1111</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="salon-grid">
+      <div class="salon-card">
+        <div class="salon-card-icon">✂</div>
+        <h3>Cut &amp; Style</h3>
+        <p>Precision cuts, lived-in layers, blunt bobs, and everything in between. Tailored to your texture and vision.</p>
+      </div>
+      <div class="salon-card">
+        <div class="salon-card-icon">◈</div>
+        <h3>Color</h3>
+        <p>Full color, root touch-ups, glosses, and toners. Vibrant fashion colors welcome and encouraged.</p>
+      </div>
+      <div class="salon-card">
+        <div class="salon-card-icon">◇</div>
+        <h3>Highlights &amp; Lowlights</h3>
+        <p>Foils, balayage, money pieces, and dimensional color work for depth, contrast, and movement.</p>
+      </div>
+      <div class="salon-card">
+        <div class="salon-card-icon">∿</div>
+        <h3>Blowout &amp; Finish</h3>
+        <p>Smooth, voluminous, or textured — a blowout that actually lasts. Add-on to any service or book solo.</p>
+      </div>
+      <div class="salon-card">
+        <div class="salon-card-icon">❋</div>
+        <h3>Treatments</h3>
+        <p>Deep conditioning, bond repair, and scalp treatments to restore health and shine between color services.</p>
+      </div>
+      <div class="salon-card">
+        <div class="salon-card-icon">◉</div>
+        <h3>Extensions</h3>
+        <p>Length, volume, or both. Consultation required. Text to schedule your extension appointment.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
